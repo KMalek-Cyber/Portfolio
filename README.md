@@ -1,14 +1,14 @@
 # Malek KLIMANE — Portfolio Cybersécurité
 
-Portfolio statique publié avec GitHub Pages.
+Portfolio statique orienté cybersécurité, systèmes et réseaux.
 
-## Hiérarchie du portfolio
-- TryHackMe / pratique cyber — priorité
-- Certifications — contenu et preuves
-- Expériences — CAVEC, Secursense, RATP
-- Formations — chronologiques avec logos
-- Projets secondaires — banc de test fibre et REVIME
-- Recommandations
+## Mise en avant
+- TryHackMe : 28 rooms complétées, Top 25 %, filtres interactifs et preuves visuelles
+- Certifications CENTRI et Fortinet avec contenu détaillé
+- Expériences CAVEC, Secursense, RATP CAP et CARDY
+- Formations avec logos
+- Projets secondaires : banc de test fibre optique et REVIME
+- Deux lettres de recommandation
 
 ## Déploiement
-Déposer le contenu du dossier dans le dépôt GitHub puis utiliser GitHub Pages sur la branche `main`, dossier `/root`.
+Publier le contenu du dossier sur GitHub Pages.

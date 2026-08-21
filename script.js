@@ -70,3 +70,27 @@ if(matchMedia('(pointer:fine)').matches){
     card.addEventListener('pointerleave',()=>{card.style.transform=''});
   });
 }
+
+
+// V10: reading progress
+const progress=document.getElementById('scroll-progress');
+window.addEventListener('scroll',()=>{if(progress){const h=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=(h>0?(window.scrollY/h)*100:0)+'%';}},{passive:true});
+
+// V10: cyber focus mode — intentionally hides secondary projects
+const focusToggle=document.getElementById('focus-toggle');
+focusToggle?.addEventListener('click',()=>{const active=document.body.classList.toggle('cyber-focus');focusToggle.classList.toggle('active',active);focusToggle.setAttribute('aria-pressed',active?'true':'false');focusToggle.querySelector('span').textContent=active?'ON':'OFF';});
+
+// V10: collapsible professional experience details
+const expToggles=[...document.querySelectorAll('.exp-toggle')];
+expToggles.forEach(btn=>btn.addEventListener('click',()=>{const card=btn.closest('.experience-card');const collapsed=card.classList.toggle('details-collapsed');btn.setAttribute('aria-expanded',collapsed?'false':'true');btn.firstChild.textContent=collapsed?'Voir les détails ':'Réduire les détails ';btn.querySelector('span').textContent=collapsed?'+':'−';}));
+
+// V10: image lightbox for project/experience galleries too
+for(const img of document.querySelectorAll('.photo-strip img,.secursense-gallery img,.pcb-gallery img,.revime-gallery img')){
+  img.addEventListener('click',()=>{const box=document.createElement('div');box.className='lightbox';const full=document.createElement('img');full.src=img.src;full.alt=img.alt;const close=document.createElement('button');close.textContent='×';close.setAttribute('aria-label','Fermer');box.append(full,close);document.body.appendChild(box);const rm=()=>box.remove();close.onclick=rm;box.onclick=e=>{if(e.target===box)rm()};});
+}
+
+// V10: active navigation indicator
+const navLinks=[...document.querySelectorAll('.nav nav a')];
+const sections=navLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const navObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.toggle('nav-active',a.getAttribute('href')==='#'+entry.target.id));}}),{rootMargin:'-25% 0px -65% 0px'});
+sections.forEach(s=>navObserver.observe(s));

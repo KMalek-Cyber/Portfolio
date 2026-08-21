@@ -12,3 +12,13 @@ Portfolio statique orienté cybersécurité, systèmes et réseaux.
 
 ## Déploiement
 Publier le contenu du dossier sur GitHub Pages.
+
+
+## V10 — interaction layer
+- Mode Cyber focus
+- Progress bar
+- Navigation active state
+- Experience collapse/expand
+- Certification modules + official links
+- TryHackMe filters + room modal
+- Gallery lightboxes
